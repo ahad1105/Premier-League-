@@ -1,0 +1,71 @@
+package seleniumproj;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class RegisterPage {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+
+
+
+//click on register field in register page
+		driver.findElement(By.xpath("/html/body/main/div/div/div/form/div/div[2]/div/a")).click();
+		
+		Thread.sleep(5000);
+		
+		//click on entering FIRSTNAME
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[1]/div[2]/input")).sendKeys("Ahad");
+		
+		Thread.sleep(5000);
+		
+		//Click on entering LASTNAME
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[2]/div[2]/input")).sendKeys("Khan");
+		
+		Thread.sleep(5000);
+		
+		//Click on entering Email ID 
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[3]/div/div[2]/input")).sendKeys("ahad1105jon@gmail.com");
+		
+		
+		Thread.sleep(5000);
+		
+		//Click on entering Password
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[4]/div[2]/input")).sendKeys("Coyg@12345678");
+		
+		//select gender
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[6]/div/ul/li[1]/label/span")).click();
+		
+		Thread.sleep(5000);
+		
+		//enter DOB
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[7]/div/div[1]/div[1]/input")).sendKeys("07");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[7]/div/div[1]/div[2]/input")).sendKeys("04");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[7]/div/div[1]/div[3]/input")).sendKeys("1999");
+		Thread.sleep(5000);
+		
+		//Select element by dropdown
+		WebElement drpCountryEle=driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[8]/div[2]/div/select"));
+		Select drpCountry=new Select(drpCountryEle);
+		
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[11]/div/div/div[2]/input")).sendKeys("60072");
+		
+		driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/form/div[8]/div[2]/div/select"));
+		//entering mobile number
+		
+		
+		driver.quit();
+		
+
+	}
+
+}
