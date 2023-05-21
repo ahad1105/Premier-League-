@@ -1,0 +1,44 @@
+package seleniumproj;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Day2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver=new ChromeDriver();
+		
+		
+		driver.get("https://itera-qa.azurewebsites.net/home/automation");
+		driver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		
+		
+		//we have added a common xpath for all the check boxes in selectors hub.
+		List <WebElement> checkboxes = driver.findElements(By.xpath("//input[@class='form-check-input' and @type='checkbox']"));
+		
+		System.out.println("Total no of checkboxes " +checkboxes.size());
+		
+		Thread.sleep(5000);
+		
+		// get method of java list collection ---> returns the element at the specified position in this list  
+		for(int i=0;i<2;i++)
+		{
+			checkboxes.get(i).click();   
+		}
+		
+		Thread.sleep(5000);
+	
+		driver.quit();
+		
+		
+		
+		
+	}
+
+}
