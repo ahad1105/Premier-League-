@@ -40,6 +40,16 @@ public class Day2 {
 		}
 		
 		Thread.sleep(5000);
+		
+		
+		List <WebElement> checkboxes1 = driver.findElements(By.xpath("//input[@class='form-check-input' and @type='checkbox']"));
+		System.out.println("Total no of checkboxes " +checkboxes1.size());
+		int i = 1;
+		int j = 3;
+		int k = 4;
+		checkboxes1.get(i).click();
+		checkboxes1.get(j).click();
+		checkboxes1.get(k).click();
 
 		
 		
